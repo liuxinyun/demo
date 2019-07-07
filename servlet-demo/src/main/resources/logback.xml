@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <!-- 定义日志文件 输出位置 -->
-    <property name="logDir" value="/data/var/log/application/demo/spring-mvc-demo" />
+    <property name="logDir" value="/data/var/log/application/demo/servlet-demo" />
 
     <property name="maxHistory" value="30" />
 
@@ -82,6 +82,10 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss} %p [USER_ID:%X{USER_ID}][%t][%L][%c.%M]%m%n</pattern>
         </encoder>
     </appender>
+
+    <logger name="org.springframework" level="WARN" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
 
     <root>
         <level value="info"/>
