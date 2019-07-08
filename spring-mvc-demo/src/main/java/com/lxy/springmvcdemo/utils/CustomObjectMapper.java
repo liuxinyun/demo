@@ -1,4 +1,4 @@
-package com.lxy.demo.springmvc.utils;
+package com.lxy.springmvcdemo.utils;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.DeserializationFeature;

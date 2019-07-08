@@ -1,4 +1,4 @@
-package com.lxy.demo.servlet.form;
+package com.lxy.servletdemo.form;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

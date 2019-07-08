@@ -13,7 +13,7 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 扫描路径 -->
-    <context:component-scan base-package="com.lxy.demo.springmvc.controller"/>
+    <context:component-scan base-package="com.lxy.springmvcdemo.controller"/>
 
     <context:annotation-config/>
 
@@ -21,7 +21,7 @@
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper">
-                    <bean class="com.lxy.demo.springmvc.utils.CustomObjectMapper"/>
+                    <bean class="com.lxy.springmvcdemo.utils.CustomObjectMapper"/>
                 </property>
                 <property name="supportedMediaTypes">
                     <list>

@@ -1,4 +1,4 @@
-package com.lxy.demo.servlet.filter;
+package com.lxy.servletdemo.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

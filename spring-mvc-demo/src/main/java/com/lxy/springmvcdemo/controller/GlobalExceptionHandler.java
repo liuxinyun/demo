@@ -1,4 +1,4 @@
-package com.lxy.demo.springmvc.controller;
+package com.lxy.springmvcdemo.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.lxy.demo.common.ResultData;

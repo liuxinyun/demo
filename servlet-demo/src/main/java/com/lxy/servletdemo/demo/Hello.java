@@ -1,4 +1,4 @@
-package com.lxy.demo.servlet.demo;
+package com.lxy.servletdemo.demo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
