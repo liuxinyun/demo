@@ -15,8 +15,18 @@ import java.util.stream.Collectors;
 public class List2Map {
 
     public static void main(String[] args) {
+
         /*
-         *
+         *  普通的分组
+         * userId为key, 本身为value
+         */
+        Map<Integer, LearningSchedule> userIdMap = scheduleList.stream().collect(Collectors.toMap(LearningSchedule::getUserId, o -> o, (k1, k2) -> k1));
+        userIdMap.forEach((k, v) -> {
+            System.out.println(k+":"+v.toString());
+        });
+
+        /*
+         *  取两个属性拼接作为key，并取另一个属性的集合
          * courseId_learningSubjectId为key,nodeId Set为value
          */
         Map<String, Set<Integer>> courseIdSubjectIdAndNodesMap = scheduleList.stream().collect(Collectors.groupingBy(s -> s.getCourseId() + "_" + s.getLearningSubjectId(),
