@@ -26,14 +26,20 @@ public class LearningSchedule {
      */
     private Integer lcNodeId;
 
+    /**
+     * 得分
+     */
+    private Double score;
+
     public LearningSchedule() {
     }
 
-    public LearningSchedule(Integer userId, Integer courseId, Integer learningSubjectId, Integer lcNodeId) {
+    public LearningSchedule(Integer userId, Integer courseId, Integer learningSubjectId, Integer lcNodeId, Double score) {
         this.userId = userId;
         this.courseId = courseId;
         this.learningSubjectId = learningSubjectId;
         this.lcNodeId = lcNodeId;
+        this.score = score;
     }
 
     public Integer getUserId() {
@@ -68,6 +74,14 @@ public class LearningSchedule {
         this.lcNodeId = lcNodeId;
     }
 
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         return "LearningSchedule{" +
@@ -75,6 +89,7 @@ public class LearningSchedule {
                 ", courseId=" + courseId +
                 ", learningSubjectId=" + learningSubjectId +
                 ", lcNodeId=" + lcNodeId +
+                ", score=" + score +
                 '}';
     }
 }

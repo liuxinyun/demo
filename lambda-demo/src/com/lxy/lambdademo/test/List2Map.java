@@ -1,8 +1,8 @@
-package com.lxy.lambdademo;
+package com.lxy.lambdademo.test;
 
+import com.lxy.lambdademo.util.CommonUtil;
 import com.lxy.lambdademo.model.LearningSchedule;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 public class List2Map {
 
     public static void main(String[] args) {
+        List<LearningSchedule> scheduleList = CommonUtil.getScheduleList();
 
         /*
          *  普通的分组
@@ -34,27 +35,5 @@ public class List2Map {
         courseIdSubjectIdAndNodesMap.forEach((k, v) -> {
             System.out.println(k+":"+v.toString());
         });
-    }
-
-
-    private static List<LearningSchedule> scheduleList;
-    static {
-        scheduleList = new ArrayList<>();
-        scheduleList.add(new LearningSchedule(1, 1, 1, 1));
-        scheduleList.add(new LearningSchedule(1, 1, 1, 2));
-        scheduleList.add(new LearningSchedule(1, 1, 2, 1));
-        scheduleList.add(new LearningSchedule(1, 2, 1, 1));
-        scheduleList.add(new LearningSchedule(1, 1, 2, 2));
-        scheduleList.add(new LearningSchedule(1, 2, 1, 2));
-        scheduleList.add(new LearningSchedule(1, 2, 2, 1));
-        scheduleList.add(new LearningSchedule(1, 2, 2, 2));
-        scheduleList.add(new LearningSchedule(2, 1, 1, 1));
-        scheduleList.add(new LearningSchedule(2, 1, 1, 2));
-        scheduleList.add(new LearningSchedule(2, 1, 2, 1));
-        scheduleList.add(new LearningSchedule(2, 2, 1, 1));
-        scheduleList.add(new LearningSchedule(2, 1, 2, 2));
-        scheduleList.add(new LearningSchedule(2, 2, 1, 2));
-        scheduleList.add(new LearningSchedule(2, 2, 2, 1));
-        scheduleList.add(new LearningSchedule(2, 2, 2, 2));
     }
 }
