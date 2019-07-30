@@ -18,3 +18,5 @@ mybatis:
   mapper-locations: classpath*:com/lxy/springbootdemo/dao/mapper/*.xml
   # 配置映射类所在包名
   type-aliases-package: com.lxy.springbootdemo.model
+  configuration:
+    lazy-loading-enabled: false
