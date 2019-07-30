@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://yunge.mysql.com:3306/liuxinyun?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: liuxinyun
+    password: password
+    hikari:
+      auto-commit: true
+      maximum-pool-size: 100
+      minimum-idle: 10
+      connection-test-query: SELECT 1
+
+mybatis:
+  # 配置mapper.xml所在路径
+  mapper-locations: classpath*:com/lxy/springbootdemo/dao/mapper/*.xml
+  # 配置映射类所在包名
+  type-aliases-package: com.lxy.springbootdemo.model
