@@ -20,7 +20,11 @@
 <div style="margin-left : 30px">
     <div></div>
     <div>
-        <p><span>${emailHead}</span></p>
+        <#if (sex??) && sex == SexEnum.MALE.getValue()>
+        <p><span>${emailHead}先生</span></p>
+        <#elseif (sex??) && sex == SexEnum.FEMALE.getValue()>
+        <p><span>${emailHead}女士</span></p>
+        </#if>
     </div>
 </div>
 

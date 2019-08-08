@@ -1,6 +1,8 @@
 package com.lxy.springbootdemo.service;
 
 import com.lxy.springbootdemo.SpringBootDemoApplicationTests;
+import com.lxy.springbootdemo.enums.SexEnum;
+import com.lxy.springbootdemo.util.FreemarkerUtil;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -37,6 +39,8 @@ public class FtlTemplateTest extends SpringBootDemoApplicationTests {
             skuList.add(skuMap);
         }
         model.put("skuList", skuList);
+        model.put("sex", 1);
+        FreemarkerUtil.importEnum2Ftl(SexEnum.class, model);
         System.out.println(ftlTemplateService.getContent("OrderNotifyMail.ftl", model));
     }
 }
