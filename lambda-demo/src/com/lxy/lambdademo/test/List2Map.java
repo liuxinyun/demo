@@ -3,6 +3,7 @@ package com.lxy.lambdademo.test;
 import com.lxy.lambdademo.util.CommonUtil;
 import com.lxy.lambdademo.model.LearningSchedule;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -35,5 +36,8 @@ public class List2Map {
         courseIdSubjectIdAndNodesMap.forEach((k, v) -> {
             System.out.println(k+":"+v.toString());
         });
+        // 大集合拍平
+        List<Integer> flapList = courseIdSubjectIdAndNodesMap.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
+        flapList.forEach(System.out::println);
     }
 }
