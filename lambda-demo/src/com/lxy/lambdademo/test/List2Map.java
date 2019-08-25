@@ -1,12 +1,11 @@
 package com.lxy.lambdademo.test;
 
+import com.lxy.lambdademo.model.Employee;
 import com.lxy.lambdademo.util.CommonUtil;
 import com.lxy.lambdademo.model.LearningSchedule;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 /**
@@ -16,6 +15,25 @@ import java.util.stream.Collectors;
 public class List2Map {
 
     public static void main(String[] args) {
+
+        List<Employee> employeeList = CommonUtil.getEmployeeList();
+        // 按部门分组
+        Map<String, List<Employee>> byDepart = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        byDepart.forEach((k, v) -> {
+            System.out.println(k+":"+v.toString());
+        });
+        // 按部门分组并汇总薪水
+        Map<String, Double> byDepartSum = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.summingDouble(Employee::getSalary)));
+        byDepartSum.forEach((k, v) -> {
+            System.out.println(k+":"+v.toString());
+        });
+        // 按部门分组并取每个部门薪水最大的员工
+        Comparator<Employee> bySalary = Comparator.comparing(Employee::getSalary);
+        Map<String, Optional<Employee>> dapartMaxMap = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.reducing(BinaryOperator.maxBy(bySalary))));
+        dapartMaxMap.forEach((k, v) -> {
+            v.ifPresent(employee -> System.out.println(k + ":" + employee.toString()));
+        });
+
         List<LearningSchedule> scheduleList = CommonUtil.getScheduleList();
 
         /*
@@ -36,8 +54,9 @@ public class List2Map {
         courseIdSubjectIdAndNodesMap.forEach((k, v) -> {
             System.out.println(k+":"+v.toString());
         });
+
         // 大集合拍平
         List<Integer> flapList = courseIdSubjectIdAndNodesMap.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
-        flapList.forEach(System.out::println);
+        System.out.println(flapList);
     }
 }

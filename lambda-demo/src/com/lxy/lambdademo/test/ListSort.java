@@ -26,10 +26,12 @@ public class ListSort {
 
         // 通过thenComparing来构造链式排序
         System.out.println("根据用户id和课程id升序");
-        scheduleList.sort(Comparator.comparing(LearningSchedule::getUserId).thenComparing(LearningSchedule::getCourseId));
+        scheduleList.sort(Comparator.comparing(LearningSchedule::getUserId)
+                .thenComparing(LearningSchedule::getCourseId));
         scheduleList.forEach(System.out::println);
         System.out.println("根据用户id逆序和课程升序");
-        scheduleList.sort(Comparator.comparing(LearningSchedule::getUserId).reversed().thenComparing(LearningSchedule::getCourseId));
+        scheduleList.sort(Comparator.comparing(LearningSchedule::getUserId).reversed()
+                .thenComparing(LearningSchedule::getCourseId));
         scheduleList.forEach(System.out::println);
     }
 

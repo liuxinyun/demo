@@ -18,7 +18,9 @@ public class ListFilter {
         List<LearningSchedule> scheduleList = CommonUtil.getScheduleList();
 
         // 取分数大于60且用户id为偶数的
-        List<LearningSchedule> newList = scheduleList.stream().filter(s -> s.getUserId() % 2 == 0 && s.getScore().compareTo(60d) >= 0).collect(Collectors.toList());
+        List<LearningSchedule> newList = scheduleList.stream()
+                .filter(s -> s.getUserId() % 2 == 0 && s.getScore().compareTo(60d) >= 0)
+                .collect(Collectors.toList());
         newList.forEach(System.out::println);
     }
 
