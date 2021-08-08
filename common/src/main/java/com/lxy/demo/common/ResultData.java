@@ -18,10 +18,10 @@ public class ResultData implements Serializable {
     private static final Logger logger = LoggerFactory.getLogger(ResultData.class);
 
     // 业务状态：正常
-    public static final int STATUS_NORMAL = 1;
+    public static final int STATUS_NORMAL = 0;
 
     // 业务状态：异常
-    public static final int STATUS_ERROR = 0;
+    public static final int STATUS_ERROR = 1;
 
     // 业务状态：默认正常
     private int status = STATUS_NORMAL;

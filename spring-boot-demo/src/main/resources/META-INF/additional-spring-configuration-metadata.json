@@ -1,0 +1,20 @@
+{
+  "properties": [
+    {
+      "name": "my.name",
+      "type": "java.lang.String",
+      "description": "the project name.",
+      "deprecation": {
+        "reason": "test the properties-migrator feature.",
+        "replacement": "my.app.name",
+        "level": "error"
+      }
+    },
+    {
+      "name": "my.app.name",
+      "type": "java.lang.String",
+      "sourceType": "com.lxy.springbootdemo.migrator.MyProperties$App",
+      "description": "the project name."
+    }
+  ]
+}
