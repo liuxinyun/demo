@@ -3,7 +3,7 @@ package com.lxy.springbootdemo.service;
 import com.lxy.springbootdemo.SpringBootDemoApplicationTests;
 import com.lxy.springbootdemo.enums.SexEnum;
 import com.lxy.springbootdemo.util.FreemarkerUtil;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
